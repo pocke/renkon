@@ -1,6 +1,11 @@
 require "renkon/version"
+require_relative './renkon/patch'
+require_relative './renkon/range'
 
 module Renkon
   class Error < StandardError; end
-  # Your code goes here...
+
+  def self.x
+    Renkon::Range.new
+  end
 end
