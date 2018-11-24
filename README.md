@@ -1,8 +1,6 @@
 # Renkon
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/renkon`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Reckon is a `Range` generator with `Comparable`.
 
 ## Installation
 
@@ -22,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'renkon'
+using Renkon::Patch
+
+renkon = 10 <= Renkon.x <= 100
+p renkon.to_range == (10..100) # => true
+
+case 20
+when 10 <= Renkon.x < 20
+  # unreachable
+when 20 <= Renkon.x < 30
+  puts 'It executes here!'
+end
+```
 
 ## Development
 
@@ -33,3 +44,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/pocke/renkon.
+
+License
+-------
+
+These codes are licensed under CC0.
+
+[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
